@@ -1,0 +1,12 @@
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/core"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/core
+	url = https://github.com/seufster71/toasthub-react-core.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/session"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/session
+	url = https://github.com/seufster71/toasthub-react-member-session.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/profile"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/profile
+	url = https://github.com/seufster71/toasthub-react-member-profile.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/logout"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/logout
+	url = https://github.com/seufster71/toasthub-react-member-logout.git
