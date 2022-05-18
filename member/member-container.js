@@ -4,9 +4,8 @@
 'use strict';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-native";
 import * as memberActions from './member-actions';
-import LoginContainer from '../core/usermgnt/login-container';
 import StatusView from '../coreView/status/status-view';
 import LoadingView from '../coreView/status/loading-view';
 import NavigationView from '../coreView/navigation/navigation-view';
@@ -15,7 +14,7 @@ import DashboardContainer from './dashboard/dashboard-container';
 import LogoutContainer from './logout/logout-container';
 import MemberView from '../memberView/member-view';
 import fuLogger from '../core/common/fu-logger';
-import {PrivateRoute} from '../core/common/utils';
+import {PrivateRoute} from '../core/common/router-utils-native';
 
 function MemberContainer() {
 	const session = useSelector((state) => state.session);

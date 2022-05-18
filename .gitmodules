@@ -10,3 +10,18 @@
 [submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/logout"]
 	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/logout
 	url = https://github.com/seufster71/toasthub-react-member-logout.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/logout"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/logout
+	url = https://github.com/seufster71/toasthub-reactnative-member-logout.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/coreView"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/coreView
+	url = https://github.com/seufster71/toasthub-reactnative-core.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/profile"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/profile
+	url = https://github.com/seufster71/toasthub-reactnative-member-profile.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/dashboard"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/dashboard
+	url = https://github.com/seufster71/toasthub-react-member-dashboard.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/dashboard"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/dashboard
+	url = https://github.com/seufster71/toasthub-reactnative-member-dashboard.git

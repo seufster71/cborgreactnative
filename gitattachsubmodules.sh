@@ -25,7 +25,7 @@ ECHO "Attach member session"
 git submodule add https://github.com/seufster71/toasthub-react-member-session.git ~/git/cborgreactnative/cborgreactnative/member/session
 	
 ECHO "Attach memberView dashboard"
-git submodule add https://github.com/seufster71/toasthub-reactnative-member-session.git ~/git/cborgreactnative/cborgreactnative/memberView/dashboard
+git submodule add https://github.com/seufster71/toasthub-reactnative-member-dashboard.git ~/git/cborgreactnative/cborgreactnative/memberView/dashboard
 
 ECHO "Attach memberView logout"
 git submodule add https://github.com/seufster71/toasthub-reactnative-member-logout.git ~/git/cborgreactnative/cborgreactnative/memberView/logout

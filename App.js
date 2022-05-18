@@ -1,12 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import configureStore from "./store/configureStore";
+import { Provider } from "react-redux";
+import { NativeRouter } from "react-router-native";
+import PageContainer from "./PageContainer.js";
+
+const store = configureStore();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Woot it is running Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+	<Provider store={store}>
+		<NativeRouter>
+			<PageContainer />
+		</NativeRouter>
+	</Provider>
   );
 }
 
@@ -18,3 +24,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export function getDebugClient() {
+  let state = store.getState();
+  return state.appPrefs.debugClient;
+}
+export function getHost() {
+  return "NATIVE";
+}
