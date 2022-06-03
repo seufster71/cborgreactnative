@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 
 export default function MemberView(props) {
 
     return (
       <View>
-        {props.children}
+			{props.children}
       </View>
     );
 }

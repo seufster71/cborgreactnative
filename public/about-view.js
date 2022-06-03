@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {StyleSheet, Text, View } from 'react-native';
 
-export default function ServiceView({currentState, fields }) {
+export default function AboutView({currentState, fields }) {
 
     return (
-      <View style={styles.Container} ><Text> Rapid Application Development platform  </Text></View>
+      <View style={styles.Container} ><Text> About Toasthub  </Text></View>
     );
 }
 
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 });
 
 
-ServiceView.propTypes = {
+AboutView.propTypes = {
   currentState: PropTypes.object,
 	fields: PropTypes.object
 };

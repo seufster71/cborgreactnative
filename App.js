@@ -2,9 +2,13 @@ import { StyleSheet } from 'react-native';
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import { NativeRouter } from "react-router-native";
+import { initPublic } from "./core/common/apppref-actions";
+import { sessionCheck, viewPortChange } from "./member/session/session-actions";
 import PageContainer from "./PageContainer.js";
 
 const store = configureStore();
+store.dispatch(initPublic());
+store.dispatch(sessionCheck());
 
 export default function App() {
   return (
@@ -30,5 +34,5 @@ export function getDebugClient() {
   return state.appPrefs.debugClient;
 }
 export function getHost() {
-  return "NATIVE";
+  return "http://localhost:8090";
 }

@@ -9,12 +9,12 @@ export default function configureStore() {
     appPrefs: { lang: "EN",
       headerName: "ToastHub",
       codeType : 'WEB',
-      debugClient: true,
+      debugClient: "TRACE",
       memberMenu:'MEMBER_MENU_TOP',
       adminMenu:'ADMIN_MENU_TOP',
       systemMenu:'SYSTEM_MENU_TOP'
     },
-    session: { sessionActive: false , viewPort: 'large', callComplete: false },
+    session: { sessionActive: false , viewPort: 'large', callComplete: false, serverUrl:"http://localhost:8090" },
     status: { error: null, info: null, warn: null },
 	member: { view: "login" }
   };

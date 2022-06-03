@@ -5,14 +5,15 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route, useNavigate, useLocation } from "react-router-native";
+import { StyleSheet, View } from 'react-native';
 import * as memberActions from './member-actions';
 import StatusView from '../coreView/status/status-view';
 import LoadingView from '../coreView/status/loading-view';
-import NavigationView from '../coreView/navigation/navigation-view';
+import NavigationBarView from '../coreView/navigation/navigation-bar-view';
+import AcquaintancesContainer from './acquaintances/acquaintances-container';
 import ProfileContainer from './profile/profile-container';
 import DashboardContainer from './dashboard/dashboard-container';
 import LogoutContainer from './logout/logout-container';
-import MemberView from '../memberView/member-view';
 import fuLogger from '../core/common/fu-logger';
 import {PrivateRoute} from '../core/common/router-utils-native';
 
@@ -48,15 +49,25 @@ function MemberContainer() {
     }
     if (myMenus.length > 0) {
       return (
-        <MemberView>
-          <NavigationView appPrefs={appPrefs} permissions={myPermissions}
-          menus={myMenus} changeTab={changeTab} activeTab={location.pathname} user={session.selected} profileMenu={profileMenu}/>
+        <View style={styles.container}>
+          <NavigationBarView appPrefs={appPrefs} permissions={myPermissions} menus={myMenus} changeTab={changeTab} activeTab={location.pathname} user={session.selected} profileMenu={profileMenu} navigate={navigate}/>
           <StatusView/>
           <Routes>
-            <Route index element={<DashboardContainer />} />
-            <Route element={<PrivateRoute permissions={myPermissions} code="MA" pathto="/access-denied" />} >
-				<Route path="/acquaintances/*" element={<AcquaintancesContainer />} />
+            <Route path="/*" element={<DashboardContainer />} />
+			<Route element={<PrivateRoute permissions={myPermissions} code="MA" pathto="/access-denied" />} >
+				<Route path="/acquaintances/*" element={<AcquaintancesContainer navigate={navigate}/>} />
 			</Route>
+          </Routes>
+        </View>
+      );
+    } else {
+      	return (
+        	<LoadingView/>
+      	);
+    }
+
+
+      /*      
             <Route element={<PrivateRoute permissions={myPermissions} code="MPMTEAM" pathto="/access-denied"/>} >
 				<Route path="/pm-team/*" element={<PMTeamContainer />} />
 			</Route>
@@ -122,16 +133,16 @@ function MemberContainer() {
 			</Route>
             <Route path="/admin" render={() => (
               <Redirect to="/admin"/>
-            )}/>
-          </Routes>
-        </MemberView>
-      );
-    } else {
-      	return (
-        	<MemberView> <LoadingView/>
-        	</MemberView>
-      	);
-    }
+            )}/>*/
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: '#21618C',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+});
 
 export default MemberContainer;

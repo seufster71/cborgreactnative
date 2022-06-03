@@ -2,15 +2,17 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route, useNavigate, useLocation } from "react-router-native";
 import { StyleSheet, View } from 'react-native';
-import NavigationView from "./coreView/navigation/navigation-view";
+import NavigationBarView from "./coreView/navigation/navigation-bar-view";
+import NavigationMenuView from "./coreView/navigation/navigation-menu-view";
 import LoginContainer from "./core/usermgnt/login-container";
 import StatusView from "./coreView/status/status-view";
 import MemberContainer from "./member/member-container";
 import PublicContainer from "./public/public-container";
 import ServiceContainer from "./public/service-container";
+import AboutContainer from "./public/about-container";
 //import AdminContainer from "./admin/admin-container";
 //import SystemContainer from "./system/system-container";
-//import AccessDeniedContainer from "./core/usermgnt/accessdenied-container";
+import AccessDeniedContainer from "./core/usermgnt/accessdenied-container";
 import fuLogger from './core/common/fu-logger';
 
 function PageContainer() {
@@ -41,25 +43,27 @@ function PageContainer() {
 		fuLogger.log({level:'TRACE',loc:'PageContainer::render session Active',msg:"page "+ location.pathname });
      return (
       <Routes>
-        <Route index element={<MemberContainer />} />
+        <Route path="/*" element={<MemberContainer />} />
         <Route path="member/*" element={<MemberContainer />} />
         <Route path="access-denied" element={<AccessDeniedContainer />} />
-        <Route path="admin/*" element={<AdminContainer />} />
-        <Route path="system/*" element={<SystemContainer />} />
+        
       </Routes>
 
       );
+//<Route path="admin/*" element={<AdminContainer />} />
+  //      <Route path="system/*" element={<SystemContainer />} />
     } else {
 		fuLogger.log({level:'TRACE',loc:'PageContainer::render session NOT Active',msg:"page "+ location.pathname });
       return (
         <View style={styles.container}>
-			<NavigationView appPrefs={appPrefs} activeTab={location.pathname} menus={appMenus.PUBLIC_MENU_RIGHT}/>
+			<NavigationBarView appPrefs={appPrefs} activeTab={location.pathname} menus={appMenus.PUBLIC_MENU_RIGHT} navigate={navigate}/>
 			<StatusView />
  			<Routes>
             	<Route path="/*" element={<PublicContainer />}/>
             	<Route path="/login/*" element={<LoginContainer />}/>
-           		<Route path="/about/*" element={<PublicContainer />}/>
+           		<Route path="/about/*" element={<AboutContainer />}/>
             	<Route path="/services/*" element={<ServiceContainer />}/>
+				<Route path="/menu/*" element={<NavigationMenuView />}/>
           	</Routes>
         </View>
       );
@@ -69,7 +73,7 @@ function PageContainer() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#3962FF',
+		backgroundColor: '#21618C',
 		alignItems: 'center',
 		justifyContent: 'center'
 	},

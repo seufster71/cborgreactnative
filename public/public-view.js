@@ -6,8 +6,7 @@ export default function PublicView({currentState, fields }) {
 
 
     return (
-      <View><Text> Public Page </Text>
-      </View>
+      <Text> Welcome to Toasthub </Text>
     );
 }
 

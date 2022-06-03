@@ -25,3 +25,15 @@
 [submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/dashboard"]
 	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/dashboard
 	url = https://github.com/seufster71/toasthub-reactnative-member-dashboard.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/admin"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/admin
+	url = https://github.com/seufster71/toasthub-react-admin.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/adminView"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/adminView
+	url = https://github.com/seufster71/toasthub-reactnative-admin.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/acquaintances"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/member/acquaintances
+	url = https://github.com/seufster71/toasthub-react-member-acquaintances.git
+[submodule "/Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/acquaintances"]
+	path = /Users/edwardseufert/git/cborgreactnative/cborgreactnative/memberView/acquaintances
+	url = https://github.com/seufster71/toasthub-reactnative-member-acquaintances.git

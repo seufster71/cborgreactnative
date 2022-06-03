@@ -34,6 +34,10 @@ commitAll() {
 	cd ~/git/cborgreactnative/cborgreactnative/coreView
 	checkAndCommit "${1}"
 	
+	ECHO "#### member acquaintances"
+	cd ~/git/cborgreactnative/cborgreactnative/member/acquaintances
+	checkAndCommit "${1}"
+	
 	ECHO "#### member dashboard"
 	cd ~/git/cborgreactnative/cborgreactnative/member/dashboard
 	checkAndCommit "${1}"
@@ -48,6 +52,10 @@ commitAll() {
 	
 	ECHO "#### member session"
 	cd ~/git/cborgreactnative/cborgreactnative/member/session
+	checkAndCommit "${1}"
+	
+	ECHO "#### memberView acquaintances"
+	cd ~/git/cborgreactnative/cborgreactnative/memberView/acquaintances
 	checkAndCommit "${1}"
 	
 	ECHO "#### memberView dashboard"

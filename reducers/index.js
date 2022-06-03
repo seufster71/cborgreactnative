@@ -7,7 +7,9 @@ import status from '../core/status/status-reducer';
 import member from '../member/member-reducer';
 import session from '../member/session/session-reducer';
 
+import acquaintances from '../member/acquaintances/acquaintances-reducer';
 
-const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,userPrefs});
+
+const rootReducer = combineReducers({appPrefs,appMenus,session,member,status,userPrefs,acquaintances});
 
 export default rootReducer;
