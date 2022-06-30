@@ -43,10 +43,9 @@ function PageContainer() {
 		fuLogger.log({level:'TRACE',loc:'PageContainer::render session Active',msg:"page "+ location.pathname });
      return (
       <Routes>
-        <Route path="/*" element={<MemberContainer />} />
-        <Route path="member/*" element={<MemberContainer />} />
+        <Route path="/*" element={<MemberContainer navigate={navigate} location={location}/>} />
+        <Route path="member/*" element={<MemberContainer navigate={navigate} location={location}/>} />
         <Route path="access-denied" element={<AccessDeniedContainer />} />
-        
       </Routes>
 
       );

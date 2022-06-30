@@ -4,7 +4,7 @@
 'use strict';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Routes, Route, useNavigate, useLocation } from "react-router-native";
+import { Routes, Route } from "react-router-native";
 import { StyleSheet, View } from 'react-native';
 import * as memberActions from './member-actions';
 import StatusView from '../coreView/status/status-view';
@@ -17,13 +17,11 @@ import LogoutContainer from './logout/logout-container';
 import fuLogger from '../core/common/fu-logger';
 import {PrivateRoute} from '../core/common/router-utils-native';
 
-function MemberContainer() {
+function MemberContainer({navigate, location}) {
 	const session = useSelector((state) => state.session);
 	const appMenus = useSelector((state) => state.appMenus);
 	const appPrefs = useSelector((state) => state.appPrefs);
 	const dispatch = useDispatch();
-	const location = useLocation();
-	const navigate = useNavigate();
   	
 	useEffect(() => {
     	dispatch(memberActions.init({lang:session.selected.lang}));
@@ -50,14 +48,14 @@ function MemberContainer() {
     if (myMenus.length > 0) {
       return (
         <View style={styles.container}>
-          <NavigationBarView appPrefs={appPrefs} permissions={myPermissions} menus={myMenus} changeTab={changeTab} activeTab={location.pathname} user={session.selected} profileMenu={profileMenu} navigate={navigate}/>
           <StatusView/>
           <Routes>
             <Route path="/*" element={<DashboardContainer />} />
 			<Route element={<PrivateRoute permissions={myPermissions} code="MA" pathto="/access-denied" />} >
-				<Route path="/acquaintances/*" element={<AcquaintancesContainer navigate={navigate}/>} />
+				<Route path="/acquaintances/*" element={<AcquaintancesContainer navigate={navigate} location={location}/>} />
 			</Route>
           </Routes>
+			<NavigationBarView appPrefs={appPrefs} permissions={myPermissions} menus={myMenus} changeTab={changeTab} activeTab={location.pathname} user={session.selected} profileMenu={profileMenu} navigate={navigate}/>
         </View>
       );
     } else {
